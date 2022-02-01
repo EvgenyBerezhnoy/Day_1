@@ -116,5 +116,17 @@ namespace HospitalApp
                 ComboDoctor_SelectionChanged(ComboDoctor, null);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                PrintDialog Printdlg = new PrintDialog();
+                if (Printdlg.ShowDialog() == true)
+                {
+
+                    Printdlg.PrintVisual(DGridSchedule, Title);
+                }
+            }
+        }
     }
 }

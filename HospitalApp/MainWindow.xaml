@@ -10,7 +10,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
         </Grid.RowDefinitions>
+        <Button Grid.Row="2"  Content="Печать " HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click" Name="BtnPrint" ></Button>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <TextBlock Text="Специализация:" Style="{StaticResource BlockCommon}" Width="auto" ></TextBlock>
             <ComboBox Name="ComboSpecialization" DisplayMemberPath="Name" SelectionChanged="ComboSpecialization_SelectionChanged" ></ComboBox>
@@ -19,6 +21,7 @@
         </StackPanel>
 
         <DataGrid x:Name="DGridSchedule" Grid.Row="1" SelectionUnit="Cell" >
+          
            
         </DataGrid>
         
