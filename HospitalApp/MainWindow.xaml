@@ -19,11 +19,17 @@
             <TextBlock Text="Врач:" Style="{StaticResource BlockCommon}" Width="auto" Margin="40 5 5 5"></TextBlock>
             <ComboBox Name="ComboDoctor" DisplayMemberPath="FullName" SelectionChanged="ComboDoctor_SelectionChanged" ></ComboBox>
         </StackPanel>
+        <FlowDocumentScrollViewer Grid.Row="1" Name="scrollAllData" Visibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <FlowDocument Name="flowDocumentAllData" ColumnWidth="700" MinPageHeight="1000" FontFamily="Roboto">
+                <BlockUIContainer>
+                    <StackPanel Orientation="Vertical" >
+                    <TextBlock x:Name="TxtBlockDoctor" FontSize="20" ></TextBlock>
 
-        <DataGrid x:Name="DGridSchedule" Grid.Row="1" SelectionUnit="Cell" >
-          
-           
-        </DataGrid>
-        
+                    <DataGrid x:Name="DGridSchedule"  SelectionUnit="Cell"></DataGrid>
+                    </StackPanel>
+                </BlockUIContainer>
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+
     </Grid>
 </Window>

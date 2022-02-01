@@ -45,6 +45,7 @@ namespace HospitalApp
             if (selectedDoctor != null)
             {
                 GenerateSchedule(selectedDoctor);
+                TxtBlockDoctor.Text = selectedDoctor.FullName;
             }
         }
       private void GenerateSchedule(Entitites.Doctor selectedDoctor)
@@ -119,13 +120,11 @@ namespace HospitalApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
             {
-                PrintDialog Printdlg = new PrintDialog();
-                if (Printdlg.ShowDialog() == true)
-                {
-
-                    Printdlg.PrintVisual(DGridSchedule, Title);
-                }
+                IDocumentPaginatorSource idpSource = flowDocumentAllData;
+                printDialog.PrintDocument(idpSource.DocumentPaginator, $"Report_AllData_From_{DateTime.Now.ToShortDateString()}");
             }
         }
     }
